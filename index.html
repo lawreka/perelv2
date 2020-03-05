@@ -6,20 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 	<style>
-		@keyframes fadein {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
 		body{
 			font-family: 'Source Sans Pro', sans-serif;
-			animation: fadein 2s linear forwards;
-		}
-		.fading-in{
-			animation: fadein 2s linear forwards;
 		}
 		@media screen and (max-width: 600px) {
 			body {
@@ -149,7 +137,6 @@
 			height: 400px;
 			margin-left: auto;
 			margin-right: auto;
-			animation: fadein 4s linear forwards;
 		}
 		@media screen and (max-width: 600px) {
 			.suit {
@@ -298,7 +285,7 @@
 		</div>
 	
 	<h1 id="dnds">(do not) despair solo</h1>
-	<div class="DND-container" id="dnd-container">
+	<div class="DND-container">
 		<img class="DND-main-1" src="media/dnd/McN_Marissa_DoNotDespair12262.jpg">
 		<img class="DND-main-2" src="media/dnd/McN_Marissa_DoNotDespair12285.jpg">
 	</div>
@@ -422,16 +409,13 @@
 			elements.forEach(image => {
 				if (image.intersectionRatio > 0) {
 					image.target.src = image.target.dataset.src;
-					image.target.classList.add("fading-in");
 					observer.unobserve(image.target);
 					};
 			});
 		};
-
 		var lazyImages = document.querySelectorAll('img.lazy');
 		lazyImages.forEach(img => {
 			observer.observe(img);
 		});
-		
 </script>
 </html>
