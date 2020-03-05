@@ -401,7 +401,7 @@
 			elements.forEach(image => {
 				if (image.intersectionRatio > 0) {
 					image.target.src = image.target.dataset.src;
-					observer.unobserve(item.target);
+					observer.unobserve(image.target);
 					};
 			});
 		};
