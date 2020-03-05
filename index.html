@@ -224,7 +224,7 @@
 		<p><a href="#mtjapos">More Than Just A Piece of Sky</a></p>
 	</div>
 	<h1 id="luwofl">Life (Un)Worthy of Life: A Queer Dis/Crip Talkshow</h1>
-	<img class="PT-main" style="margin-bottom:16px;" src="media/lul/0f78667d-5eee-4b83-9647-ce4705454e86.JPG">
+	<img class="PT-main lazy" style="margin-bottom:16px;" data-src="media/lul/0f78667d-5eee-4b83-9647-ce4705454e86.JPG">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/78PBs3H_6Nc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/cTtIDqBYi4Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/7yFQZ-PFf1U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -248,7 +248,7 @@
 	<a href="http://www.no-limits-festival.de/es/stuecke/#06">Life (Un)Wothy of Life: A Dis/Crip Talkshow vols.1 + 2 - NO LIMITS Festival</a>
 	</div>
 	<h1 id="pt">Pain Threshold</h1>
-	<img class="PT-main" src="media/PT/PAIN THRESHOLD_3665.jpg">
+	<img class="PT-main lazy" data-src="media/PT/PAIN THRESHOLD_3665.jpg">
 		<p class="helptext">Click to expand images</p>
 		<div class="six-image-grid">
 			<div class="grid-thumbnail click-to-expand" style="background-image:url('media/PT/PAIN THRESHOLD_3664.jpg');"></div>
@@ -278,7 +278,7 @@
 	
 	<h1 id="dnds">(do not) despair solo</h1>
 	<div class="DND-container">
-		<img class="DND-main-1" src="media/dnd/McN_Marissa_DoNotDespair12262.jpg">
+		<img class="DND-main-1 lazy" data-src="media/dnd/McN_Marissa_DoNotDespair12262.jpg">
 		<img class="DND-main-2" src="media/dnd/McN_Marissa_DoNotDespair12285.jpg">
 	</div>
 	<p class="helptext">Click to expand images</p>
@@ -308,7 +308,7 @@
 		<a href="https://www.culturebot.org/2015/06/24130/i-wanti-vomit/">I Want/I Vomit: Dance Criticism in New York - Culturebot</a>
 	</div>
 	<h1 id="hdygfhtt">How do you get from here to there</h1>
-	<img class="PT-main" src="media/hdygt/MG_0977.jpg">
+	<img class="PT-main lazy" data-src="media/hdygt/MG_0977.jpg">
 	<p class="helptext">Click to expand images</p>
 	<div class="four-image-grid">
 		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/hdygt/MG_1039.jpg');"></div>
@@ -328,7 +328,7 @@
 		</div>
 	</div>
 	<h1 id="mtjapos">More Than Just A Piece of Sky</h1>
-	<img class="PT-main" src="media/mtjapos/20PEREL-superJumbo.jpg">
+	<img class="PT-main lazy" data-src="media/mtjapos/20PEREL-superJumbo.jpg">
 	<p class="helptext">Click to expand images</p>
 	<div class="four-image-grid">
 		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0016.JPG');"></div>
@@ -379,8 +379,6 @@
 
 	const pics = document.getElementsByClassName("click-to-expand");
 	for (let i = 0; i < pics.length; i++) {
-
-		console.log(pics[i].style['background-image'])
 		pics[i].addEventListener('click', function() {
 			expand(this);
 		});
@@ -396,5 +394,20 @@
 		document.getElementById("image-expanded-image").style['background-image'] = targetImage;
 	}
 
+		var observer = new IntersectionObserver(lazyLoad, {
+			threshold: 1.0
+		});
+		function lazyLoad(elements) {
+			elements.forEach(image => {
+				if (image.intersectionRatio > 0) {
+					image.target.src = image.target.dataset.src;
+					observer.unobserve(item.target);
+					};
+			});
+		};
+		var lazyImages = document.querySelectorAll('img.lazy');
+		lazyImages.forEach(img => {
+			observer.observe(img);
+		});
 </script>
 </html>
