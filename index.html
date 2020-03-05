@@ -6,12 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 	<style>
-		.videoclip{
-			width: 40vw;
-			height: auto;
-			margin: 1em 1em;
-			display: inline;
-		}
 		body{
 			font-family: 'Source Sans Pro', sans-serif;
 		}
@@ -22,49 +16,60 @@
 		}
 		.six-image-grid{
 			display: grid;
-			grid-template-columns: 29vw 29vw 29vw;			
+			grid-template-columns: 32vw 31vw 32vw;			
 			grid-template-rows: auto;
 			grid-template-areas: ". . ." ". . .";
-			grid-gap: 5vw;
+			grid-gap: 1vw;
 			margin-bottom: 24px;
 		}
 		@media screen and (max-width: 600px) {
 			.six-image-grid {
 				grid-template-columns: 30vw 30vw 30vw;
+				grid-gap: 5vw;
 			}
 		}
 		.four-image-grid {
 			display: grid;
-			grid-template-columns: 45vw 45vw;
+			grid-template-columns: 48vw 48vw;
 			grid-template-rows: auto;
 			grid-template-areas: ". ." ". .";
-			grid-gap: 5vw;
+			grid-gap: 1vw;
 			margin-bottom: 24px;
-			margin-left: 2.5vw;
+		}
+		@media screen and (max-width: 600px) {
+			.four-image-grid {
+				grid-template-columns: 49vw 49vw;
+				grid-gap: 2vw;
+			}
 		}
 		.PT-main{
-			width: 60vw;
+			width: 97vw;
 			height: auto;
+			max-width: 900px;
 		}
 		@media screen and (max-width: 600px) {
 			.PT-main {
 				width: 100%;
+			}
+		}
+		.DND-main-1 {
+			margin-right: 0.5vw;
+			max-width: 450px;
+		}
+		.DND-main-2 {
+			margin-left: 0.5vw;
+			max-width: 450px;
+		}
+		@media screen and (max-width: 600px) {
+			.DND-container {
+				width: 100vw;
 				margin-bottom: 16px;
 			}
 		}
-		.DND-main{
-			height: 90vh;
-			width: auto;
-		}
-		@media screen and (max-width: 600px) {
-			.DND-main {
-				width: 40vw;
-				height: auto
-			}
-		}
 		.DND-container {
-			width: 100%;
-			text-align: center;
+			display: flex;
+			width: 97vw;
+			margin-bottom: 16px;
 		}
 		.image{
 			max-width: 30vw;
@@ -150,6 +155,7 @@
 			text-decoration: none;
 		}
 		iframe {
+			margin-bottom: 16px;
 		}
 		@media screen and (max-width: 600px) {
 			iframe {
@@ -167,6 +173,30 @@
 				background-size:cover;
 				height:100px;
 			}
+		}
+		#image-expanded-modal{
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			background-color: rgba(255, 255, 255, 0.5);
+			top: 0;
+			left: 0;
+		}
+		.hidden{
+			display: none;
+		}
+		#image-expanded-image{
+			width: 80%;
+			height: 80%;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5%;
+		}
+		.helptext {
+			font-size: 14px;
 		}
 		</style>
 </head>
@@ -186,8 +216,15 @@
 		Perel asks, “How do we move across space and time with respect to our collected histories?” Their work has been shown for more than a decade at numerous galleries, theaters and performance spaces in the U.S. and abroad.<br><br>
 	</div>
 	<h2>Selected recent works</h2>
-	<h1>Life (Un)Worthy of Life: A Queer Dis/Crip Talkshow</h1>
-	<img class="PT-main" src="media/lul/0f78667d-5eee-4b83-9647-ce4705454e86.JPG">
+	<div class="text">
+		<p><a href="#luwofl">Life (Un)Worthy of Life: A Queer Dis/Crip Talkshow</a></p>
+		<p><a href="#pt">Pain Threshold</a></p>
+		<p><a href="#dnds">(do not) despair solo</a></p>
+		<p><a href="#hdygfhtt">How do you get from here to there</a></p>
+		<p><a href="#mtjapos">More Than Just A Piece of Sky</a></p>
+	</div>
+	<h1 id="luwofl">Life (Un)Worthy of Life: A Queer Dis/Crip Talkshow</h1>
+	<img class="PT-main" style="margin-bottom:16px;" src="media/lul/0f78667d-5eee-4b83-9647-ce4705454e86.JPG">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/78PBs3H_6Nc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/cTtIDqBYi4Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/7yFQZ-PFf1U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -210,15 +247,16 @@
 	<br>
 	<a href="http://www.no-limits-festival.de/es/stuecke/#06">Life (Un)Wothy of Life: A Dis/Crip Talkshow vols.1 + 2 - NO LIMITS Festival</a>
 	</div>
-	<h1>Pain Threshold</h1>
+	<h1 id="pt">Pain Threshold</h1>
 	<img class="PT-main" src="media/PT/PAIN THRESHOLD_3665.jpg">
+		<p class="helptext">Click to expand images</p>
 		<div class="six-image-grid">
-			<div class="grid-thumbnail" style="background-image:url('media/PT/PAIN THRESHOLD_3664.jpg');"></div>
-			<div class="grid-thumbnail" style="background-image:url('media/PT/PAIN THRESHOLD_3764.jpg');"></div>
-			<div class="grid-thumbnail" style="background-image:url('media/PT/PAIN THRESHOLD_3739.jpg');"></div>
-			<div class="grid-thumbnail" style="background-image:url('media/PT/PAIN THRESHOLD_7808.jpg');"></div>
-			<div class="grid-thumbnail" style="background-image:url('media/PT/PAIN THRESHOLD_3790.jpg');"></div>
-			<div class="grid-thumbnail" style="background-image:url('media/PT/PAIN THRESHOLD_A3820.jpg');"></div>
+			<div class="grid-thumbnail click-to-expand" style="background-image:url('media/PT/PAIN THRESHOLD_3664.jpg');"></div>
+			<div class="grid-thumbnail click-to-expand" style="background-image:url('media/PT/PAIN THRESHOLD_3764.jpg');"></div>
+			<div class="grid-thumbnail click-to-expand" style="background-image:url('media/PT/PAIN THRESHOLD_3739.jpg');"></div>
+			<div class="grid-thumbnail click-to-expand" style="background-image:url('media/PT/PAIN THRESHOLD_7808.jpg');"></div>
+			<div class="grid-thumbnail click-to-expand" style="background-image:url('media/PT/PAIN THRESHOLD_3790.jpg');"></div>
+			<div class="grid-thumbnail click-to-expand" style="background-image:url('media/PT/PAIN THRESHOLD_A3820.jpg');"></div>
 		</div>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/OGbZjWUf6c8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/8oGVA6UFnMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -238,19 +276,19 @@
 		<a class="links" href="media/PT/SPIKE61_VIEWS.pdf">Choreographic Justice - Spike Magazine July 2019</a><br><br>
 		</div>
 	
-	<h1>(do not) despair solo</h1>
+	<h1 id="dnds">(do not) despair solo</h1>
 	<div class="DND-container">
-		<img class="DND-main" src="media/dnd/McN_Marissa_DoNotDespair12262.jpg">
-		<img class="DND-main" src="media/dnd/McN_Marissa_DoNotDespair12285.jpg">
+		<img class="DND-main-1" src="media/dnd/McN_Marissa_DoNotDespair12262.jpg">
+		<img class="DND-main-2" src="media/dnd/McN_Marissa_DoNotDespair12285.jpg">
 	</div>
-	<br>
+	<p class="helptext">Click to expand images</p>
 	<div class="six-image-grid">
-		<div class="grid-thumbnail" style="background-image:url('media/dnd/D850953_CREDIT IAN DOUGLAS.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/dnd/D851012_CREDIT IAN DOUGLAS.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/dnd/D851103_CREDIT IAN DOUGLAS.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/dnd/D851252_CREDIT IAN DOUGLAS.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/dnd/D851189_CREDIT IAN DOUGLAS.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/dnd/D851286_CREDIT IAN DOUGLAS.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/dnd/D850953_CREDIT IAN DOUGLAS.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/dnd/D851012_CREDIT IAN DOUGLAS.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/dnd/D851103_CREDIT IAN DOUGLAS.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/dnd/D851252_CREDIT IAN DOUGLAS.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/dnd/D851189_CREDIT IAN DOUGLAS.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/dnd/D851286_CREDIT IAN DOUGLAS.jpg');"></div>
 	</div>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/_HcwmtZfySI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/qmG_9HH0Wxg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -269,13 +307,14 @@
 		<a href="https://contemporaryperformance.com/2018/01/27/marissa-perel/">In Performance: Marissa Perel, (Do Not) Despair Solo (American Realness) - Contemporary Performance</a><br><br>
 		<a href="https://www.culturebot.org/2015/06/24130/i-wanti-vomit/">I Want/I Vomit: Dance Criticism in New York - Culturebot</a>
 	</div>
-	<h1>How do you get from here to there</h1>
+	<h1 id="hdygfhtt">How do you get from here to there</h1>
 	<img class="PT-main" src="media/hdygt/MG_0977.jpg">
+	<p class="helptext">Click to expand images</p>
 	<div class="four-image-grid">
-		<div class="grid-thumbnail" style="background-image:url('media/hdygt/MG_1039.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/hdygt/MG_1040.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/hdygt/MG_1047.jpg');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/hdygt/MG_1050.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/hdygt/MG_1039.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/hdygt/MG_1040.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/hdygt/MG_1047.jpg');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/hdygt/MG_1050.jpg');"></div>
 	</div>
 		<div class="text">
 		The work was supported by:<br>
@@ -288,18 +327,19 @@
 		<a href="https://www.projectspace-efanyc.org/marissa-perel-interview/">SHIFT 2015/2016 Interview: Marissa Perel</a>
 		</div>
 	</div>
-	<h1>More Than Just A Piece of Sky</h1>
-	<img class="PT-main" src="media/mtjapos/IMG_2118.JPG">
+	<h1 id="mtjapos">More Than Just A Piece of Sky</h1>
+	<img class="PT-main" src="media/mtjapos/20PEREL-superJumbo.jpg">
+	<p class="helptext">Click to expand images</p>
 	<div class="four-image-grid">
-		<div class="grid-thumbnail" style="background-image:url('media/mtjapos/735A0016.JPG');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/mtjapos/735A0041.JPG');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/mtjapos/735A0066.JPG');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/mtjapos/735A0078.JPG');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0016.JPG');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0041.JPG');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0066.JPG');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0078.JPG');"></div>
 	</div>
 	<div class="six-image-grid">
-		<div class="grid-thumbnail" style="background-image:url('media/mtjapos/735A0099.JPG');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/mtjapos/735A0151.JPG');"></div>
-		<div class="grid-thumbnail" style="background-image:url('media/mtjapos/735A0175.JPG');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0099.JPG');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0151.JPG');"></div>
+		<div class="grid-thumbnail click-to-expand" style="background-image:url('media/mtjapos/735A0175.JPG');"></div>
 	</div>
 	<br><br>
 	<iframe src="https://player.vimeo.com/video/111782089" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
@@ -326,6 +366,9 @@
 	Bed design: John Taylor.<br><br>
 	<a href="http://posturemag.com/online/more-than-failure-more-than-lack-more-than-difference-marissa-perels-more-than-just-a-piece-of-sky/">More Than Failure, More Than Lack, More Than Difference: Marissa Perel's More Than Just A Piece of Sky - Posture Media</a>
 	</div>
+	<div id="image-expanded-modal" class="hidden">
+		<div id="image-expanded-image"></div>
+	</div>
 </body>
 <script>
 	scrollbutton = document.getElementById("arrow");
@@ -333,5 +376,25 @@
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	}
+
+	const pics = document.getElementsByClassName("click-to-expand");
+	for (let i = 0; i < pics.length; i++) {
+
+		console.log(pics[i].style['background-image'])
+		pics[i].addEventListener('click', function() {
+			expand(this);
+		});
+	}
+
+	function expand(picture) {
+		const modal = document.getElementById("image-expanded-modal");
+		modal.addEventListener('click', function() {
+			modal.classList.add('hidden');
+		})
+		modal.classList.remove('hidden');
+		const targetImage = picture.style['background-image'];
+		document.getElementById("image-expanded-image").style['background-image'] = targetImage;
+	}
+
 </script>
 </html>
